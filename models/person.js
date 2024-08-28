@@ -19,7 +19,7 @@ const personSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: (v) => {
-        return /\d(2,3)-\d/.test(v)
+        return /\d{2,3}-\d*/.test(v)
       },
       message: `invalid phone number`
     }
