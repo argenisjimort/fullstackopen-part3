@@ -1,0 +1,8 @@
+PUT http://localhost:3001/api/persons/66a99ae8ccc9fe8be2e41e3c
+Content-Type: application/json
+
+//66a99ae8ccc9fe8be2e41e3c
+{
+    "name": "wasd", 
+    "number": "#_#"
+}
