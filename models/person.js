@@ -1,12 +1,19 @@
-const url = process.env.URL
+const url = process.env.URL //get the connection String from the .env
 
 const mongoose = require(`mongoose`)
 mongoose.set( `strictQuery`, false )
 
+
+
+
 console.log(`connecting mongoose to url...`)
-mongoose.connect(url)
+mongoose.connect(url)//connecto to mongoDB, with the connection string
   .then( console.log(`connected`) )
   .catch( err => console.log(`ERROR ${err}`) )
+
+
+
+
 
 const personSchema = new mongoose.Schema({
   name: {
@@ -25,6 +32,11 @@ const personSchema = new mongoose.Schema({
     }
   }
 })
+
+
+
+
+
 
 personSchema.set(`toJSON`, {
   transform: (document, returnedObject) => {
