@@ -72,7 +72,7 @@ app.put(`/api/persons/:id`, (request, response, next) => {
   Person.findByIdAndUpdate(request.params.id, request.body, { new: true, runValidators: true, context: 'query' })
     .then( res => {
       //this is when the id doesnt exist, but for some reason the error doesnt get caught, and the server just returns an empty object
-      if (!res) return response.status(400).send({ error: `bad request, item not found` })
+      if (!res) return response.status(404).send({ error: `bad request, item not found` })
 
       response.json(res)
     })
